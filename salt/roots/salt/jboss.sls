@@ -39,6 +39,14 @@ jboss-as:
   group.present:
     - name: jboss-as
 
+jboss-conf:
+  file.managed:
+    - name: /opt/jboss-as/bin/standalone.conf
+    - source: salt://standalone.conf
+    - user: jboss-as
+    - group: jboss-as
+    - mode: 744
+
 jboss-service:
   file.managed:
     - name: /etc/init.d/jboss-as
