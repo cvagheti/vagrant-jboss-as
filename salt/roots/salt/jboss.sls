@@ -42,26 +42,8 @@ jboss-as:
 jboss-conf:
   file.managed:
     - name: /opt/jboss-as/bin/standalone.conf
-    - source: salt://standalone.conf
+    - source: salt://files/standalone.conf
     - user: jboss-as
     - group: jboss-as
     - mode: 744
-
-jboss-service:
-  file.managed:
-    - name: /etc/init.d/jboss-as
-    - source: salt://jboss-as
-    - user: root
-    - group: root
-    - mode: 744
-  cmd.wait:
-    - name: update-rc.d jboss-as defaults
-    - watch:
-      - file: jboss-service
-  service.running:
-    - name: jboss-as
-    - reload: True
-    
-    
-    
-    
+   

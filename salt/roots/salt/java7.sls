@@ -15,4 +15,5 @@ jdk7:
     - pkgrepo: java7_ppa
     - requires:
       - cmd: accept-license
+      - cmd: java7_ppa 
 
